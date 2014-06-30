@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "module/module.h"
+#include "module1.h"
 #include <QString>
 #include "random"
 
@@ -31,7 +31,7 @@ void MainWindow::on_pushButton_clicked()
 
    if (ui->comboBox->currentText() == "Функция случайное число")
    {
-   float n =  Module::getRandom();
+   float n =  Module1::getRandom();
    ui->label_2->setText("Случайное число = " + QString::number(n));
    }
 
@@ -44,7 +44,8 @@ void MainWindow::on_pushButton_clicked()
 
 
 
-    m  = Module::getRandomMatrix(w,h);
+    m  = Module1::getRandomMatrix(w,h);
+
 
     ui->tableWidget->setRowCount(w);
     ui->tableWidget->setColumnCount(h);

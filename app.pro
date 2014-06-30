@@ -20,15 +20,11 @@ HEADERS  += mainwindow.h
 FORMS    += mainwindow.ui
 
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/build-module-Desktop_Qt_5_3_0_MSVC2012_OpenGL_32bit-Debug/release/ -lmodule
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/build-module-Desktop_Qt_5_3_0_MSVC2012_OpenGL_32bit-Debug/debug/ -lmodule
-else:unix: LIBS += -L$$PWD/build-module-Desktop_Qt_5_3_0_MSVC2012_OpenGL_32bit-Debug/ -lmodule
 
-INCLUDEPATH += $$PWD/module
-DEPENDPATH += $$PWD/module
 
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/build-module-Desktop_Qt_5_3_0_MSVC2012_OpenGL_32bit-Debug/release/libmodule.a
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/build-module-Desktop_Qt_5_3_0_MSVC2012_OpenGL_32bit-Debug/debug/libmodule.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/build-module-Desktop_Qt_5_3_0_MSVC2012_OpenGL_32bit-Debug/release/module.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/build-module-Desktop_Qt_5_3_0_MSVC2012_OpenGL_32bit-Debug/debug/module.lib
-else:unix: PRE_TARGETDEPS += $$PWD/build-module-Desktop_Qt_5_3_0_MSVC2012_OpenGL_32bit-Debug/libmodule.a
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/module/build-module1-Desktop_Qt_5_3_0_MSVC2010_OpenGL_32bit-Debug/release/ -lmodule1
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/module/build-module1-Desktop_Qt_5_3_0_MSVC2010_OpenGL_32bit-Debug/debug/ -lmodule1
+
+INCLUDEPATH += $$PWD/module/module1
+DEPENDPATH += $$PWD/module/module1
